@@ -1,5 +1,5 @@
 # To look up in input file the contents of master file.
-##PYTHON
+## PYTHON
 
 ```
 python3 lookup.py --i=inputfile --m=masterfile
