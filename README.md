@@ -6,6 +6,10 @@ python3 lookup.py --i=inputfile --m=masterfile
 ```
 Here both are assumed to be tab separated files.  
 
+#### Uniq program
+```
+python3 uniq.py -i=input.txt(tab separated)
+
 ## PERL
 ### For tab seperated file
 
