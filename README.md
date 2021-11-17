@@ -4,7 +4,7 @@
 ```
 python3 lookup.py --i=inputfile --m=masterfile
 ```
-Here both are assumed to be tab separated files.
+Here both are assumed to be tab separated files.  
 
 ##PERL
 ###For tab seperated file
