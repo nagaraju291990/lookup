@@ -36,14 +36,20 @@ for line in lines:
 	else:
 		uniq_hash[cols[0]] = 1
 
+print_hash = {}
+
 for line in lines:
 	if(line == ""):
 		continue
 	cols = line.split("\t")
-	if uniq_hash[cols[0]] == 1:
+	if cols[0] not in print_hash:
 		fw1.write(line + "\n")
-	else:
-		fw2.write(line + "\t" + str(uniq_hash[cols[0]]) + "\n")
+	if uniq_hash[cols[0]] > 1:
+			fw2.write(line + "\t" + str(uniq_hash[cols[0]]) + "\n")
+
+	#fw1.write(line + "\n")
+	
+	print_hash[cols[0]] = 1
 
 
 fw1.close()
