@@ -23,6 +23,9 @@ fp1.close() # Close file
 
 uniq_hash = {}
 
+fw1 = open("uniq.txt","w", encoding="utf-8")
+fw2 = open("duplicates.txt","w", encoding="utf-8")
+
 for line in lines:
 	if(line == ""):
 		continue
@@ -38,8 +41,12 @@ for line in lines:
 		continue
 	cols = line.split("\t")
 	if uniq_hash[cols[0]] == 1:
-		print(line)
+		fw1.write(line + "\n")
 	else:
-		print(line, uniq_hash[cols[0]])
+		fw2.write(line + "\t" + str(uniq_hash[cols[0]]) + "\n")
+
+
+fw1.close()
+fw2.close()
 
 
