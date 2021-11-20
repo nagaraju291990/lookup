@@ -38,6 +38,7 @@ for line in lines:
 
 print_hash = {}
 
+duplicate_array =[]
 for line in lines:
 	if(line == ""):
 		continue
@@ -45,12 +46,16 @@ for line in lines:
 	if cols[0] not in print_hash:
 		fw1.write(line + "\n")
 	if uniq_hash[cols[0]] > 1:
-			fw2.write(line + "\t" + str(uniq_hash[cols[0]]) + "\n")
+		duplicate_array.append(line + "\t" + str(uniq_hash[cols[0]]))
+		#fw2.write(line + "\t" + str(uniq_hash[cols[0]]) + "\n")
 
 	#fw1.write(line + "\n")
 	
 	print_hash[cols[0]] = 1
 
+duplicate_array.sort()
+
+fw2.write("\n".join(duplicate_array))
 
 fw1.close()
 fw2.close()
